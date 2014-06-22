@@ -1,7 +1,22 @@
+# parameter
 param(
-[string]$path
+[string]$p
 )
-#Write-Host $path
+# end parameter
+
+# config
+$pathToImports = "E:\beets\imports"
+# end config
+
+# functions
+function Get-Imported-Folder{
+    $LastFileCaptured = gci $pathToImports | select -last 1
+	$LastFileCapturedFullPath = $pathToImports + "\" + $LastFileCaptured
+	$firstLine = Get-Content $LastFileCapturedFullPath -totalcount 1
+	$pathToFolder = $firstLine.SubString(0,$firstLine.LastIndexOf("\"))
+	Remove-Item $LastFileCapturedFullPath
+    return $pathToFolder
+}
 
 function Show-BalloonTip {            
 [cmdletbinding()]            
@@ -26,14 +41,19 @@ $balloon.BalloonTipTitle = $Title
 $balloon.Visible = $true            
 $balloon.ShowBalloonTip($Duration)            
 }
+# end functions
 
-C:\Python27\Scripts\beet.exe import $path
-$pathToCover = $path + "\cover.jpg"
-Remove-Item $pathToCover 
+#Write-Host $path
+
+C:\Python27\Scripts\beet.exe import $p
+
+$newPath = Get-Imported-Folder
+$pathToCover = $newPath + "\cover.jpg"
+Remove-Item $pathToCover
 
 $itunes = New-Object -ComObject iTunes.Application
 $tracks = $itunes.LibraryPlaylist
-$add = $tracks.AddFile($path)
+$add = $tracks.AddFile($newPath)
 
-$ballonMessage = "'" + $path + "' importiert!"
+$ballonMessage = "'" + $newPath + "' importiert!"
 Show-BalloonTip -Title “Import erfolgreich!” -MessageType Info -Message $ballonMessage -Duration 1000
