@@ -9,3 +9,4 @@ hardcore WIP ;)
 - reg-edits
 - remove old folder/archive after import
 - after import, copy to other folder (e.g. dropbox)
+- sonderzeichen (elipse z.B.) im ordnernamen
