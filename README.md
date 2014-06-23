@@ -17,3 +17,5 @@ hardcore WIP ;)
 - sonderzeichen (elipse z.B.) im ordnernamen => http://beets.readthedocs.org/en/latest/reference/pathformat.html
 - mac-version
   - http://apple.stackexchange.com/questions/57412/how-can-i-trigger-a-notification-center-notification-from-an-applescript-or-shel
+  - http://stackoverflow.com/questions/4215287/adding-a-script-to-macos-finder-contextual-menu
+  - http://apple.stackexchange.com/questions/103621/run-applescript-from-bash-script
