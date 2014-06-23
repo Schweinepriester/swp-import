@@ -16,3 +16,4 @@ hardcore WIP ;)
 - after import, copy to other folder (e.g. dropbox) -> prompt, yes or no?
 - sonderzeichen (elipse z.B.) im ordnernamen => http://beets.readthedocs.org/en/latest/reference/pathformat.html
 - mac-version
+  - http://apple.stackexchange.com/questions/57412/how-can-i-trigger-a-notification-center-notification-from-an-applescript-or-shel
