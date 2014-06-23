@@ -4,6 +4,7 @@ hardcore WIP ;)
 
 ## todo?
 
+- beets-path-configurable
 - import only, no beets
 - display/export changelog-string
   - http://beets.readthedocs.org/en/v1.3.6/reference/query.html#path-queries
