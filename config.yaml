@@ -1,0 +1,20 @@
+directory: F:\Audio\Mediathek\Musik
+library: E:\beets\musiclibrary.blb
+plugins: lyrics fetchart embedart zero fromfilename lastgenre ftintitle importfeeds
+import:
+   resume: no
+zero:
+   fields: comments
+lastgenre:
+   whitelist: false
+   fallback: ''
+   source: album
+paths:
+   default: $albumartist/$album%aunique{}/$albumartist - $album%aunique{} - $track - $title
+importfeeds:
+   formats: m3u_multi
+   dir: E:\beets\imports
+   absolute_path: yes
+original_date: yes
+fetchart:
+   remote_priority: true
